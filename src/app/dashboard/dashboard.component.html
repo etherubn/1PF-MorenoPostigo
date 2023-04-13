@@ -1,0 +1,44 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Menú Lateral</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-8 mb-2 mx-auto">
+          <button mat-raised-button color="primary">
+            <mat-icon>add</mat-icon>
+            Alumnos
+          </button>
+        </div>
+        <div class="col-8 mb-2 mx-auto">
+          <button mat-raised-button color="primary">
+            <mat-icon>add</mat-icon>
+            Cursos
+          </button>
+        </div>
+        <div class="col-8 mb-2 mx-auto">
+          <button mat-raised-button color="primary">
+            <mat-icon>add</mat-icon>
+            Clases
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <p>
+      <mat-toolbar color="primary">
+        <button
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+          (click)="drawer.toggle()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Aplicación ABM de Alumnos de un curso</span>
+      </mat-toolbar>
+    </p>
+    <app-alumnos></app-alumnos>
+  </div>
+</mat-drawer-container>

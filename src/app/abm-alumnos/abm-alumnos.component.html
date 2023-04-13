@@ -1,0 +1,119 @@
+<h1 mat-dialog-title>ABM de Alumnos</h1>
+<div class="container">
+  <div mat-dialog-content>
+    <form [formGroup]="formulario">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input
+                  [formControl]="nombreControl"
+                  matInput
+                  placeholder="Placeholder"
+                />
+                <mat-hint>Ingresar el nombre</mat-hint>
+                <mat-error>
+                  <app-form-error
+                    [formError]="nombreControl.errors"
+                  ></app-form-error>
+                </mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Apellido</mat-label>
+                <input
+                  [formControl]="apellidoControl"
+                  matInput
+                  placeholder="Placeholder"
+                />
+                <mat-hint>Ingresar Apellido</mat-hint>
+                <mat-error>
+                  <app-form-error
+                    [formError]="apellidoControl.errors"
+                  ></app-form-error>
+                </mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Colocar el correo</mat-label>
+                <input
+                  [formControl]="emailControl"
+                  matInput
+                  placeholder="pat@example.com"
+                  required
+                />
+                <mat-error>
+                  <app-form-error
+                    [formError]="emailControl.errors"
+                  ></app-form-error>
+                </mat-error>
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="col">
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Fecha de nacimiento</mat-label>
+                <input
+                  [formControl]="fechaNacimientoControl"
+                  matInput
+                  placeholder="17/08/2005"
+                  required
+                />
+                <mat-hint>Ingresar fecha de nacimiento</mat-hint>
+                <mat-error>
+                  <app-form-error
+                    [formError]="fechaNacimientoControl.errors"
+                  ></app-form-error>
+                </mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Seleccionar sección</mat-label>
+                <mat-select [formControl]="seccionControl">
+                  <mat-option value="A">Sección A</mat-option>
+                  <mat-option value="B">Sección B</mat-option>
+                  <mat-option value="C">Sección C</mat-option>
+                  <mat-option value="D">Sección D</mat-option>
+                </mat-select>
+                <mat-error>
+                  <app-form-error
+                    [formError]="seccionControl.errors"
+                  ></app-form-error>
+                </mat-error>
+              </mat-form-field>
+            </p>
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Ingresar Nota</mat-label>
+                <input
+                  [formControl]="notaControl"
+                  matInput
+                  placeholder="Placeholder"
+                  type="number"
+                />
+                <mat-hint>Nota de 0 a 20</mat-hint>
+                <mat-error>
+                  <app-form-error
+                    [formError]="notaControl.errors"
+                  ></app-form-error>
+                </mat-error>
+              </mat-form-field>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="containe d-flex justify-content-center">
+        <div mat-dialog-actions >
+          <button mat-raised-button mat-dialog-close color="primary">Cancelar</button>
+          <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

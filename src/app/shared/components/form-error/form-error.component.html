@@ -1,0 +1,14 @@
+
+    <div *ngFor="let error of formError | keyvalue">
+        <ng-container [ngSwitch]="error.key">
+            <p class="text-danger" *ngSwitchCase="'pattern'">Fecha inválida</p>
+            <p class="text-danger" *ngSwitchCase="'required'">Se requiere contenido en el campo</p>
+            <p class="text-danger" *ngSwitchCase="'minlength'">Debe tener {{error.value.requiredLength}} caracteres</p>
+            <p class="text-danger" *ngSwitchCase="'maxlength'">Debe tener {{error.value.requiredLength}} caracteres como máximo</p>
+            <p class="text-danger" *ngSwitchCase="'email'">Ingresar correo válido</p>
+            <p class="text-danger" *ngSwitchCase="'min'">El valor debe estar entre 0 y 20</p>
+            <p class="text-danger" *ngSwitchCase="'max'">El valor debe estar entre 0 y 20</p>
+            <p class="text-danger" *ngSwitchCase="'noSelect'">Seleccionar una de las opciones</p>
+        </ng-container>
+    </div>
+
